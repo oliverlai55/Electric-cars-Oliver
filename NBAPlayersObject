@@ -1,4 +1,14 @@
 db.nbaplayers2.insert
-"first-name":"Stephen","last-name":"Curry","pts":"32.4","reb":"4.9","ast":"5.8","eff":"31.9"
-"first-name":"James","last-name":"Harden","pts":"29.3","reb":"6.5","ast":"6.8","eff":"26.9"
-"first-name":"","last-name":"","pts":"","reb":"","ast":"","eff":""
+"first-name":"Stephen","last-name":"Curry","pts":"32.4","reb":"4.9","ast":"5.8","eff":"31.9","photo":"https://s-media-cache-ak0.pinimg.com/236x/64/d1/8f/64d18fc298a019520842040f5cd3763d.jpg"
+
+"first-name":"James","last-name":"Harden","pts":"29.3","reb":"6.5","ast":"6.8","eff":"26.9","photo":"http://blogs.mercurynews.com/thompson/files/2015/05/usa-today-8409492.0-1024x576.jpg"
+
+"first-name":"Paul","last-name":"George","pts":"27.6","reb":"8.2","ast":"4.2","eff":"26.3","photo":"http://i.huffpost.com/gen/1822754/images/o-PAUL-GEORGE-facebook.jpg"
+
+"first-name":"Russell","last-name":"Westbrook","pts":"27.1","reb":"7.5","ast":"9.6","eff":"29.8","photo":"http://bossip.files.wordpress.com/2014/04/russell-westbrook-ninjaturtle.jpg"
+
+"first-name":"LeBron","last-name":"James","pts":"26.2","reb":"7.8","ast":"6.5","eff":"26.4","photo":"https://s-media-cache-ak0.pinimg.com/736x/7b/f5/60/7bf5606d051e0cd37a8b50ba440d23ce.jpg"
+
+"first-name":"Blake","last-name":"Griffin","pts":"24.4","reb":"8.6","ast":"5.0","eff":"26.2","photo":"http://image.cdn.ispot.tv/ad/75Yr/kia-optima-griffin-force-featuring-blake-griffin-jack-mcbrayer-large-3.jpg"
+"first-name":"Damian","last-name":"Lillard","pts":"24.1","reb":"4.5","ast":"7.0","eff":"21.3","photo":"http://oregonoptimist.com/wp-content/uploads/2015/03/Damian-Lillard-wears-I-Cant-Breathe-Shirt.jpg"
+"first-name":"Anthony","last-name":"Davis","pts":"23.8","reb":"10.7","ast":"1.5","eff":"26.7","photo":"http://www.compcamps.com/camps2012/mliu/Anthony%20Davis.jpg"
