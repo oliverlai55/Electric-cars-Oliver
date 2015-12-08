@@ -2,14 +2,22 @@ var express = require('express');
 var router = express.Router();
 
 
+
 /* GET home page. */
 var MongoClient = require('mongodb').MongoClient;
 router.get('/', function(req, res, next) {
-    MongoClient.connect('mongodb://localhost:27017/mongotest', function(error, db){
-        db.collection('teams').find().toArray(function(error, result){
-            console.log(result)
-        })
-    })
+    MongoClient.connect('mongodb://localhost:27017/NBAPlayers', function(error, db){
+        db.collection('NBAPlayers').find().toArray(function(error, result){
+            console.log(result);
+            console.log("==");
+            pictureArray = [];
+
+            var rand1 = Math.floor(Math.random()*result.length);
+  			res.render('index', { player: result[rand] });
+
+  			console.log(result[rand]);
+        });
+    });
 
 	//index page should load random picture/item
 	//1. Get all pictures from the MongoDB
@@ -19,12 +27,11 @@ router.get('/', function(req, res, next) {
 	//5. Choose a random iage from the array and set it to a var.
 	//6. res.render the index view and send it the photo
 
-	var serverphoto = [
-        {name: 'http://chadconway.pbworks.com/f/1253765817/news-electriccar1.jpg' },
-        {name: 'https://c2.staticflickr.com/2/1307/4700132636_cd67861c4b_b.jpg' }
-     ];
-
-  res.render('index', { photos: serverphoto });
+	// var serverphoto = [
+ //        {name: 'http://chadconway.pbworks.com/f/1253765817/news-electriccar1.jpg' },
+ //        {name: 'https://c2.staticflickr.com/2/1307/4700132636_cd67861c4b_b.jpg' }
+ //     ];
+ 	
 });
 
 router.get('/standings',function(req, res, next){
