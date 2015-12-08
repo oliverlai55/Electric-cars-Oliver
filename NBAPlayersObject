@@ -1,0 +1,4 @@
+db.nbaplayers2.insert
+"first-name":"Stephen","last-name":"Curry","pts":"32.4","reb":"4.9","ast":"5.8","eff":"31.9"
+"first-name":"James","last-name":"Harden","pts":"29.3","reb":"6.5","ast":"6.8","eff":"26.9"
+"first-name":"","last-name":"","pts":"","reb":"","ast":"","eff":""
