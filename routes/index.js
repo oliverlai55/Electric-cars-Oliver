@@ -6,13 +6,13 @@ var mongoUrl = 'mongodb://localhost:27017/NBAPlayers';
 
 /* GET home page. */
 
-router.get('/'), function (req, res, next) {
+router.get('/', function (req, res, next) {
 	MongoClient.connect(mongoUrl, function (error, db){
 		db.collection('users').find({ip:req.ip}).toArray(function (error, result){
 
 			var userVotedOnPhotos = [];
 			var returnedPhotos = [];
-			for (var i=0; i<results.length; i++){
+			for (var i=0; i<result.length; i++){
 				userVotedOnPhotos.push(result[i].photo);
 			};
 
@@ -28,7 +28,7 @@ router.get('/'), function (req, res, next) {
 			});
 		});
 	});
-};
+});
 
 
 // router.get('/', function(req, res, next) {
