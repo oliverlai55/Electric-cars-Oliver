@@ -41,6 +41,13 @@ router.get('/standings',function(req, res, next){
 	res.render('index', { title: 'Standings' });
 });
 
+// router.post('/team'), function(req, res, next){
+// 	MongoClient.connect('mongodb://localhost:27017/NBAPlayers', function(error, db){
+// 		db.collection('')
+// 	})
+// }
+
+
 router.post('*', function(req,res,next){
 	//this will run for all posted pages
 });

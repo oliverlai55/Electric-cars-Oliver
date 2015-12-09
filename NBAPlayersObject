@@ -18,14 +18,5 @@ db.nbaplayers2.insert
 
 
 
-db.NBAPlayers.save({"first-name":"Russell","last-name":"Westbrook","pts":"27.1","reb":"7.5","ast":"9.6","eff":"29.8","photo":"http://bossip.files.wordpress.com/2014/04/russell-westbrook-ninjaturtle.jpg"})
-
-db.NBAPlayers.save({"first-name":"LeBron","last-name":"James","pts":"26.2","reb":"7.8","ast":"6.5","eff":"26.4","photo":"https://s-media-cache-ak0.pinimg.com/736x/7b/f5/60/7bf5606d051e0cd37a8b50ba440d23ce.jpg"})
-
-
-db.NBAPlayers.save({"first-name":"Blake","last-name":"Griffin","pts":"24.4","reb":"8.6","ast":"5.0","eff":"26.2","photo":"http://image.cdn.ispot.tv/ad/75Yr/kia-optima-griffin-force-featuring-blake-griffin-jack-mcbrayer-large-3.jpg"})
-
-db.NBAPlayers.save({"first-name":"Damian","last-name":"Lillard","pts":"24.1","reb":"4.5","ast":"7.0","eff":"21.3","photo":"http://oregonoptimist.com/wp-content/uploads/2015/03/Damian-Lillard-wears-I-Cant-Breathe-Shirt.jpg"})
-db.NBAPlayers.save({"first-name":"Anthony","last-name":"Davis","pts":"23.8","reb":"10.7","ast":"1.5","eff":"26.7","photo":"http://www.compcamps.com/camps2012/mliu/Anthony%20Davis.jpg"})
-db.NBAPlayers.save({})
-db.NBAPlayers.save({})
+db.collection.update(  { _id:...} , { $set: { some_key : new_info  } } 
+db.NBAPlayers.update( { _id: 56672dca43a4ec8a84b24e75},{ $set:{ "name":"Steph Curry" } })
