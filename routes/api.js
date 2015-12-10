@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
 var mongoUrl = 'mongodb://localhost:27017/NBAPlayers';
+var db;
+var mongoose = require('mongoose');
+mongoose.connect(mongoUrl);
 
 
 /* GET home page. */
@@ -73,5 +76,13 @@ router.post('*', function(req,res,next){
 		res.redirect('/');
 	}
 	//this will run for all posted pages
+	MongoClient.connect(mongoUrl, function (error, db){
+		db.collection('NBAPlayers').find({image: req.body.photo}).toArray(function (error, result){
+			var updateVotes = function (db, votes, callback){
+				if(page=='team'){var newVotes = votes + 1;}
+				else{var newVotes = votes - 1;}
+			}
+		})
+	})
 });
 module.exports = router;
