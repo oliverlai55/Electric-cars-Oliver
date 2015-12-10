@@ -2,8 +2,6 @@
 	<!-- = makes it print -->
 	<!-- the <% %>turns to javascript -->
 	<!-- the = means you print the js -->
-
-
 <% include head %>
 
 <body>
@@ -26,19 +24,17 @@
 		</div>
 
 		<div class="button-holder">
-			<form class="vote-button" action="" method="">
+			<form class="vote-button" action="./team" method="post">
 					<input type="hidden" name="photo" value="" />
 					<input type="submit" class="btn btn-info" value="On My Team!" />
 			</form>
-			<form class="vote-button" action="./poser" method="post">
+			<form class="vote-button" action="./bench" method="post">
 					<input type="hidden" name="photo" value="" />
-					<input type="submit" class="btn btn-info" value="Next!" />
+					<input type="submit" class="btn btn-info" value="Bench!" />
 			</form>
 		</div>
 	</div>
 </div>
-
-
 
 </body>
 

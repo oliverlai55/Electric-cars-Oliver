@@ -8,22 +8,27 @@ var mongoUrl = 'mongodb://localhost:27017/NBAPlayers';
 
 router.get('/', function (req, res, next) {
 	MongoClient.connect(mongoUrl, function (error, db){
+		//1. Get all pictures from the MongoDB
 		db.collection('users').find({ip:req.ip}).toArray(function (error, result){
-
-			var userVotedOnPhotos = [];
+		//2 Get the current user from MongoDB via req.ip
+			var photoVoted = [];
 			var returnedPhotos = [];
 			for (var i=0; i<result.length; i++){
-				userVotedOnPhotos.push(result[i].photo);
+				photoVoted.push(result[i].photo);
 			};
 
-			db.collection('NBAPlayers').find({photo: {$nin: userVotedOnPhotos} }).toArray(function (err, playerResult){
+		db.collection('NBAPlayers').find({photo: {$nin: photosVoted} }).toArray(function (err, playerResult){
+				//3. Find which pphotos the currect user has NOT voted on
 				returnedPhotos = playerResult;
+				//4. Load all those photos into an array
 
 				if(returnedPhotos.length == 0){
-					res.render('index');
+					res.render('standings', {awesomeProperty: "you've voted"});
 				}else{
 					var rand = Math.floor(Math.random()*returnedPhotos.length);
+					//5. Choose a random iage from the array and set it to a var.
 					res.render('index', { players: returnedPhotos[rand] } );
+					//6. res.render the index view and send it the photo
 				}  
 			});
 		});
@@ -31,40 +36,25 @@ router.get('/', function (req, res, next) {
 });
 
 
-// router.get('/', function(req, res, next) {
-//     MongoClient.connect(mongoUrl, function (error, db){
-//         db.collection('NBAPlayers').find().toArray(function (error, result){
-//             console.log(result);
-//             console.log("==");
-//             pictureArray = [];
-
-//             var rand1 = Math.floor(Math.random()*result.length);
-//   			res.render('index', { player: result[rand] });
-
-//   			console.log(result[rand]);
-//         });
-//     });
-
-// 	//index page should load random picture/item
-// 	//1. Get all pictures from the MongoDB
-// 	//2 Get the current user from MongoDB via req.ip
-// 	//3. Find which pphotos the currect user has NOT voted on
-// 	//4. Load all those photos into an array
-// 	//5. Choose a random iage from the array and set it to a var.
-// 	//6. res.render the index view and send it the photo
-
-// 	// var serverphoto = [
-//  //        {name: 'http://chadconway.pbworks.com/f/1253765817/news-electriccar1.jpg' },
-//  //        {name: 'https://c2.staticflickr.com/2/1307/4700132636_cd67861c4b_b.jpg' }
-//  //     ];
- 	
-// });
 
 router.get('/standings',function(req, res, next){
 	//1. get All the photos
 	//2. sort them by highest likes
 	//3. res.render the standings view and pass it the sorted photo array
-	res.render('index', { title: 'Standings' });
+	MongoClient.connect(mongoUrl, function (error, db){
+		//1. Get all pictures from the MongoDB
+		db.collection('NBAPlayers').find().toArray(function (error, result){
+			//Pass all votes
+
+			result.sort(function (p1, p2){
+				return (p2.totalVotes - p1.totalVotes)
+			});
+
+			res.render('standings',{photoStandings: result} );
+
+		});
+	});
+	
 });
 
 // router.post('/team'), function(req, res, next){
@@ -75,6 +65,13 @@ router.get('/standings',function(req, res, next){
 
 
 router.post('*', function(req,res,next){
+	if(req.url == '/team'){
+		var page = 'team';
+	}else if (req.url == '/bench'){
+		var page = 'bench';
+	}else{
+		res.redirect('/');
+	}
 	//this will run for all posted pages
 });
 module.exports = router;
