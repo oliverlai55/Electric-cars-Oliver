@@ -5,6 +5,7 @@ var mongoUrl = 'mongodb://localhost:27017/NBAPlayers';
 var db;
 var mongoose = require('mongoose');
 mongoose.connect(mongoUrl);
+var Photo = require('../models/photos')
 
 
 /* GET home page. */
