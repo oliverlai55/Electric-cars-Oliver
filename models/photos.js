@@ -4,7 +4,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var photoSchema = new Schema({
-	image: String, 
+	name: String,
+	image: String,
 	totalVotes: Number
 });
 

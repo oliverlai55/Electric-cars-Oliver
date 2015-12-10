@@ -1,44 +1,26 @@
-
-	<!-- = makes it print -->
-	<!-- the <% %>turns to javascript -->
-	<!-- the = means you print the js -->
-
-
 <% include head %>
 
 <body>
+
 <header>
-    <% include header %>
+<% include header %>
 </header>
+<main>
+	<ul>
 
-<div class="container">
-	<div class="row col-sm-12">
-		<div class="image col-sm-12">
-			<h1>Select Your Team</h1>
-			<div class="col-sm-4"></div>
-			<h1><img class="player-image col-sm-4" src="<%= players.photo %>"></h1>
-			<div class="col-sm-4">
-				<div class="pts">Points Per Game: <%= players.pts %></div>
-				<div class="reb">Rebounds Per Game: <%= players.reb %></div>
-				<div class="ast">Assists Per Game: <%= players.ast %></div>
-				<div class="eff">Efficiency Rating: <%= players.eff %></div>
-			</div>
-		</div>
-		<div class="button-holder">
-		<form class="vote-button" action="" method="">
-				<input type="hidden" name="photo" value="" />
-				<input type="submit" class="btn btn-info" value="On My Team!" />
-			</form>
-			<form class="vote-button" action="./poser" method="post">
-				<input type="hidden" name="photo" value="" />
-				<input type="submit" class="btn btn-info" value="Next!" />
-			</form>
-		</div>
-	</div>
-</div>
+		<!-- for loop -->
+		<% for(i=0; i<photosStandings.length; i++){ %>
+			<li>
+				<img width="200" src="<%= photosStandings[i].image %>" alt="" />
+				<p class="up"><%= photosStandings[i].totalVotes %></p>
+			</li>
+		<% } %>
+		<!-- end for loop -->
 
-
-
+	</ul>
+</main>
+<footer>
+<% include footer %>	
+</footer>
 </body>
-
-<%include footer %>
+</html>

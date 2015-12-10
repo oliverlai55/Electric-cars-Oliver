@@ -18,5 +18,26 @@ db.nbaplayers2.insert
 
 
 
-db.collection.update(  { _id:...} , { $set: { some_key : new_info  } } 
-db.NBAPlayers.update( { _id: 56672dca43a4ec8a84b24e75},{ $set:{ "name":"Steph Curry" } })
+Database: electric
+Collection: photos
+name
+image
+totalVotes
+
+db.photos.insert({})
+db.photos.insert({"name":"","image":"","totalVotes":""})
+
+db.photos.insert({"name":"Ferrari LaFerrari","image":"http://i.dailymail.co.uk/i/pix/2013/03/05/article-2288318-187175BC000005DC-416_634x286.jpg","totalVotes":0})
+db.photos.insert({"name":"Aston Martin DB11","image":"http://images.car.bauercdn.com/pagefiles/11572/1040x0/zaston.jpg?scale=down","totalVotes":0})
+
+db.photos.insert({"name":"Rolls Royce Phantom","image":"http://www.mad4wheels.com/webpics/hires/00010927%20-%202012%20Rolls-Royce%20Phantom%20Drophead%20coup%C3%A9%20Black%20Bison%20by%20Wald/2012_Rolls-Royce_Phantom_Drophead_coup%C3%A9_Black_Bison_by_Wald_002_9171.jpg","totalVotes":0})
+
+db.photos.insert({"name":"Lamborghini Reventon","image":"http://orig08.deviantart.net/995b/f/2008/099/4/3/lamborghini_reventon_by_dangeruss.jpg","totalVotes":0})
+
+db.photos.insert({"name":"Tesla Model S","image":"http://cdn2.ubergizmo.com/wp-content/uploads/2012/12/tesla-model-s.jpg","totalVotes":0})
+
+db.photos.insert({"name":"Nissan GTR","image":"http://www.japanesesportcars.com/photos/d/54259-2/wald-tuned-nissan-gt-r-sports-line-black-bison-edition+_2_.jpg","totalVotes":0})
+
+db.photos.insert({"name":"BMW i3","image":"http://www.plugincars.com/sites/default/files/bmw-i3-front34-620.jpg","totalVotes":0})
+
+db.photos.insert({"name":"Porsche Mission E","image":"http://i2.cdn.turner.com/money/dam/assets/150915114005-porsche-electric-car-mission-e-780x439.jpg","totalVotes":0})
