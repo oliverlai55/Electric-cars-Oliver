@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+//creates a body object that represents the variables we get back
 
 var routes = require('./routes/index');
 var apiRoutes = require('./routes/api');
