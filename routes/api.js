@@ -14,10 +14,13 @@ mongoose.connect(mongoUrl);
 
 router.get('/photos/get', function (req, res, next) {
 	Photo.find(function(err,photosResult){
+		//what is Photo? the name of index.ejs?
+
 		if(err){
 			console.log(err);
 		}else{
 			res.json(photosResult);
+			//this gets all the info from my collection
 			console.log('test');
 			//going to kick back result, kicks back json
 		}
